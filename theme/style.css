@@ -14,6 +14,7 @@ body {
   font-weight: 100;
   color: #333333;
   background: url('theme/logo.png') #FFFFFF right bottom no-repeat;
+  margin: 0;
 }
 
 h1 {
@@ -154,4 +155,24 @@ ul {
   max-height: 400px;
   margin: 20px auto;
   display: table-cell;
+}
+
+pre {
+  font-size: 90%;
+  border: none;
+}
+
+.code-large {
+  font-size: 120%;
+}
+
+.code-large pre {
+  padding-top: 2em;
+}
+
+.how {
+  background-image: url('img/dracones.jpg');
+  background-size: cover;
+  color: #FAFAFA;
+  padding-top: 5em;
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>YYCjs Slides</title>
+  <title>Meet Mysam</title>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,900,700,500' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="theme/font-awesome.css">
   <style type="text/css">
@@ -410,6 +410,7 @@ body {
   font-weight: 100;
   color: #333333;
   background: url('theme/logo.png') #FFFFFF right bottom no-repeat;
+  margin: 0;
 }
 
 h1 {
@@ -552,6 +553,26 @@ ul {
   display: table-cell;
 }
 
+pre {
+  font-size: 90%;
+  border: none;
+}
+
+.code-large {
+  font-size: 120%;
+}
+
+.code-large pre {
+  padding-top: 2em;
+}
+
+.how {
+  background-image: url('img/dracones.jpg');
+  background-size: cover;
+  color: #FAFAFA;
+  padding-top: 5em;
+}
+
   </style>
 </head>
 <body>
@@ -559,60 +580,127 @@ ul {
     <div class="progress-bar"></div>
   </div>
 
-  <div class="slide" id="slide-1">
-    <section class="slide-content"><h1 id="yyc-js-presents">YYC.js Presents</h1>
-<h2 id="an-epic-slide-template">An Epic Slide Template</h2>
-<h3 id="that-totally-kicks-some-ass">That totally kicks some ass</h3>
-<h4 id="kind-of-like-chuck-norris">Kind of like Chuck Norris</h4>
-<h5 id="and-jackie-chan">And Jackie Chan</h5>
-<p>Maybe even Chris Rock</p>
+  <div class="slide  how" id="slide-1">
+    <section class="slide-content"><h1 id="how-">How?</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-2">
-    <section class="slide-content"><h1 id="brought-to-you-by">Brought to you by</h1>
+  <div class="slide hidden  code-large" id="slide-2">
+    <section class="slide-content"><h2 id="html5-can-hear-you-">HTML5 can hear you!</h2>
+<pre><code class="lang-javascript"><span class="comment">// Only works in recent Webkit Browsers like</span>
+<span class="comment">// Mobile Android, Chrome, Chromium</span>
+<span class="keyword">var</span> recognition = <span class="keyword">new</span> webkitSpeechRecognition();
+recognition.onresult = <span class="keyword">function</span>(event) {
+  console.log(event)
+}
+recognition.start();</code></pre>
+<h4 id="try-it-at-jsbin-com-sivuri-http-jsbin-com-sivuri-">Try it at <a href="http://jsbin.com/sivuri">jsbin.com/sivuri</a></h4>
 </section>
   </div>
-  <div class="slide hidden  presenter" id="slide-3">
+  <div class="slide hidden" id="slide-3">
+    <section class="slide-content"><h2 id="machine-learning-ai-">Machine learning (AI)</h2>
+<blockquote>
+<p>Label each dataset.</p>
+<p>Then turn it into a fixed length list of numbers between 0 and 1.</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="keyword">var</span> net = <span class="keyword">new</span> brain.NeuralNetwork();
+
+<span class="comment">// [ R, G, B ]</span>
+net.train([
+  { input: [ <span class="number">0.03</span>, <span class="number">0.7</span>, <span class="number">0.5</span> ], output: { black: <span class="number">1</span> } },
+  { input: [ <span class="number">0.16</span>, <span class="number">0.09</span>, <span class="number">0.2</span> ], output: { white: <span class="number">1</span> } },
+  { input: [ <span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">1.0</span> ], output: { white: <span class="number">1</span> }
+});
+
+<span class="keyword">var</span> output = net.run([<span class="number">1</span>, <span class="number">0.4</span>, <span class="number">0</span> ]);  <span class="comment">// { white: 0.99, black: 0.002 }</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-4">
+    <section class="slide-content"><h1 id="natural-language-processing-nlp-">Natural Language Processing (NLP)</h1>
+</section>
+  </div>
+  <div class="slide hidden  code-large" id="slide-5">
+    <section class="slide-content"><h2 id="-1-tokenize">#1 Tokenize</h2>
+<pre><code class="lang-javascript">tokenize(<span class="string">'What is the meaning of life'</span>)
+<span class="comment">// -&gt; [ 'What', 'is', 'the', 'meaning', 'of', 'life' ]</span>
+tokenize(<span class="string">'What is the weather like today'</span>)
+<span class="comment">// -&gt; [ 'What', 'is', 'the', 'weather', 'like', 'today' ]</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden  code-large" id="slide-6">
+    <section class="slide-content"><h2 id="-2-stem">#2 Stem</h2>
+<pre><code class="lang-javascript">stem([ <span class="string">'What'</span>, <span class="string">'is'</span>, <span class="string">'the'</span>, <span class="string">'meaning'</span>, <span class="string">'of'</span>, <span class="string">'life'</span> ])
+<span class="comment">// -&gt; ['what', 'mean', 'life']</span>
+stem([ <span class="string">'What'</span>, <span class="string">'is'</span>, <span class="string">'the'</span>, <span class="string">'weather'</span>, <span class="string">'like'</span>, <span class="string">'today'</span> ])
+<span class="comment">// -&gt; [ 'what', 'weather', 'todai' ]</span>
+
+join([<span class="string">'what'</span>, <span class="string">'mean'</span>, <span class="string">'life'</span>], [ <span class="string">'what'</span>, <span class="string">'weather'</span>, <span class="string">'todai'</span> ])
+<span class="comment">// -&gt; [ 'what', 'mean', 'life', 'weather', 'todai' ]</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden  code-large" id="slide-7">
+    <section class="slide-content"><h2 id="-3-featurize">#3 Featurize</h2>
+<pre><code class="lang-javascript"><span class="comment">// [ 'what', 'mean', 'life', 'weather', 'todai' ]</span>
+features([ <span class="string">'what'</span>, <span class="string">'weather'</span>, <span class="string">'todai'</span> ])
+<span class="comment">// -&gt; [ 1, 0, 0, 1, 1 ]</span>
+features([ <span class="string">'what'</span>, <span class="string">'mean'</span>, <span class="string">'life'</span> ])
+<span class="comment">// -&gt; [ 1, 1, 1, 0, 0 ]</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden  code-large" id="slide-8">
+    <section class="slide-content"><h2 id="-4-train">#4 Train</h2>
+<pre><code class="lang-javascript"><span class="keyword">var</span> net = <span class="keyword">new</span> brain.NeuralNetwork();
+
+<span class="comment">// [ 'what', 'mean', 'life', 'weather', 'todai' ]</span>
+net.train([
+  <span class="comment">// [ 'what', 'weather', 'todai' ]</span>
+  { input: [ <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span> ], output: { sunshine: <span class="number">1</span> } },
+  <span class="comment">// [ 'what', 'mean', 'life' ]</span>
+  { input: [ <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span> ], output: { fourtytwo: <span class="number">1</span> } }
+]);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden  code-large" id="slide-9">
+    <section class="slide-content"><h2 id="-5-classify">#5 Classify</h2>
+<pre><code class="lang-javascript">tokenizeAndStem(<span class="string">'Can you tell me about the weather today please'</span>)
+<span class="comment">// -&gt; [ 'can', 'tell', 'weather', 'todai', 'pleas' ]</span>
+features([ <span class="string">'can'</span>, <span class="string">'tell'</span>, <span class="string">'weather'</span>, <span class="string">'todai'</span>, <span class="string">'pleas'</span> ])
+<span class="comment">// [ 'what', 'mean', 'life', 'weather', 'todai' ]</span>
+<span class="comment">// -&gt; [ 0, 0, 0, 1, 1 ]</span>
+net.run([ <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span> ]);
+<span class="comment">// -&gt; { sunshine: 0.9326151115201983, fourtytwo: 0.06951084324415624 }</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h2 id="and-more-">And more...</h2>
+<h3 style="text-align: center">Learn about it on Medium <a href="https://medium.com/@daffl/html5-nodejs-and-neural-networks-the-tech-behind-mysam-an-open-source-siri-6cc27992098b#.c1hi4mwzs">@daffl</a></h3>
+
+<div style="text-align: center;">
+  <a href="http://feathersjs.com" target="_blank"><img alt="Feather" src="img/feathers-logo.png" style="max-width: 100%; margin: 40px 0;"></a>
+  <a href="http://donejs.com" target="blank"><img alt="DoneJS" src="img/donejs-logo-ie.png" style="max-width: 100%; margin: 40px 0;"></a>
+</div></section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h1 id="why-">Why?</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h2 id="mysam-is-an-experiment">MySam is an experiment</h2>
+<ul>
+<li>Can we make Machine Learning more accessible?</li>
+<li>How will we relate to technology that learns?</li>
+<li>What is its User Experience?</li>
+<li>What does it mean when data becomes the technology?</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden  presenter" id="slide-13">
     <section class="slide-content"><p><img src="http://gravatar.com/avatar/a14850281f19396480bdba4aab2d52ef?s=200" alt="David Luecke"></p>
 <h2 id="david-luecke">David Luecke</h2>
 <ul>
 <li><a href="https://github.com/daffl"><i class="fa fa-github"></i> daffl</a></li>
 <li><a href="http://twitter.com/daffl"><i class="fa fa-twitter"></i> @daffl</a></li>
 </ul>
-</section>
-  </div>
-  <div class="slide hidden  presenter" id="slide-4">
-    <section class="slide-content"><p><img src="http://gravatar.com/avatar/23aba778a7daae99348aeb0728cf4aec?s=200" alt="Eric Kryski"></p>
-<h2 id="eric-kryski">Eric Kryski</h2>
-<ul>
-<li><a href="https://github.com/ekryski"><i class="fa fa-github"></i> ekryski</a></li>
-<li><a href="http://twitter.com/ekryski"><i class="fa fa-twitter"></i> @ekryski</a></li>
-<li><a href="http://erickryski.com"><i class="fa fa-home"></i> erickryski.com</a></li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden  sponsors" id="slide-5">
-    <section class="slide-content"><h1 id="our-sponsors">Our Sponsors</h1>
-<p><img src="img/sponsors/assembly_logo.png" alt="Assembly"></p>
-<p><img src="img/sponsors/village_brewery_logo.png" alt="Village Brewery"></p>
-<p><img src="img/sponsors/startup_calgary_logo.png" alt="Startup Calgary"></p>
-<p><img src="img/sponsors/petrofeed_logo.png" alt="PetroFeed"></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-6">
-    <section class="slide-content"><h1 id="last-month">Last Month</h1>
-<ul>
-<li>Something awesome</li>
-<li>More awesomeness</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-7">
-    <section class="slide-content"><h1 id="next-month">Next Month</h1>
-<ul>
-<li>Something awesome</li>
-<li>More awesomeness</li>
-</ul>
+<p><a href="http://daffl.github.io/meet-mysam">daffl.github.io/meet-mysam</a></p>
 </section>
   </div>
 
