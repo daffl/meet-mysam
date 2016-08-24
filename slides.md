@@ -193,6 +193,10 @@ export default function({ React, $ /* ... */ }) {
 <a href="https://facebook.github.io/react/" target="_blank"><img style="width: 16%;" src="img/react-logo.png" alt="React"></a>
 <a href="http://stealjs.com" target="_blank"><img style="width: 16%;" src="img/steal-logo.png" alt="React"></a>
 
+-- intro
+
+# Why?
+
 -- marvin
 
 <div class="quote-container">
@@ -200,10 +204,6 @@ export default function({ React, $ /* ... */ }) {
   <p><a href="http://wheelmaker42.deviantart.com/art/Marvin-the-Paranoid-Android-499132446" target="_blank">wheelmaker42.deviantart.com</a></p>
 </div>
 <img src="img/marvin.png" alt="Marvin The Paranoid Android" />
-
---
-
-# Why?
 
 -- questions code-large
 
