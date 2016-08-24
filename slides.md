@@ -4,11 +4,11 @@ theme: theme
 controls: false
 logo: theme/logo.png
 
--- how
+-- intro
 
-# How?
+# Meet mySam
 
--- code-large
+--
 
 ## HTML5 can hear you!
 
@@ -33,7 +33,8 @@ recognition.start();
 > Then turn it into a fixed length list of numbers between 0 and 1.
 
 ```javascript
-var net = new brain.NeuralNetwork();
+const brain = require('brain.js');
+const net = new brain.NeuralNetwork();
 
 // [ R, G, B ]
 net.train([
@@ -49,7 +50,7 @@ var output = net.run([1, 0.4, 0 ]);  // { white: 0.99, black: 0.002 }
 
 # Natural Language Processing (NLP)
 
--- code-large
+--
 
 ## \#1 Tokenize
 
@@ -60,7 +61,7 @@ tokenize('What is the weather like today')
 // -> [ 'What', 'is', 'the', 'weather', 'like', 'today' ]
 ```
 
--- code-large
+--
 
 ## \#2 Stem
 
@@ -74,7 +75,7 @@ join(['what', 'mean', 'life'], [ 'what', 'weather', 'todai' ])
 // -> [ 'what', 'mean', 'life', 'weather', 'todai' ]
 ```
 
--- code-large
+--
 
 ## \#3 Featurize
 
@@ -87,7 +88,7 @@ features([ 'what', 'mean', 'life' ])
 // -> [ 1, 1, 1, 0, 0 ]
 ```
 
--- code-large
+--
 
 ## \#4 Train
 
@@ -103,7 +104,7 @@ net.train([
 ]);
 ```
 
--- code-large
+--
 
 ## \#5 Classify
 
@@ -119,14 +120,86 @@ net.run([ 0, 0, 0, 1, 1 ]);
 
 --
 
-## And more...
+## natural-brain
 
-<h3 style="text-align: center">Learn about it on Medium <a href="https://medium.com/@daffl/html5-nodejs-and-neural-networks-the-tech-behind-mysam-an-open-source-siri-6cc27992098b#.c1hi4mwzs">@daffl</a></h3>
+A [node-natural](https://github.com/NaturalNode/natural) classifier using a [brain.js](https://github.com/harthur-org/brain.js) neural network:
 
-<div style="text-align: center;">
-  <a href="http://feathersjs.com" target="_blank"><img alt="Feather" src="img/feathers-logo.png" style="max-width: 100%; margin: 40px 0;"></a>
-  <a href="http://donejs.com" target="blank"><img alt="DoneJS" src="img/donejs-logo-ie.png" style="max-width: 100%; margin: 40px 0;"></a>
+```javascript
+const classifier = new require('natural-brain').BrainJSClassifier();
+
+classifier.addDocument('my unit-tests failed.', 'software');
+classifier.addDocument('tried the program, but it was buggy.', 'software');
+classifier.addDocument('tomorrow we will do standup.', 'meeting');
+classifier.addDocument('can you play some new music?', 'music');
+
+classifier.train();
+
+console.log(classifier.classify('did the tests pass?')); // -> software
+console.log(classifier.classify('Lets meet tomorrow?')); // -> meeting
+console.log(classifier.classify('Can you play some stuff?')); // -> music
+```
+--
+
+## Writing plugins: Server
+
+```javascript
+export default function() {
+  const app = this;
+
+  // Get a database backed service at the /todos endpoint
+  const todoService = app.service('/todos');
+
+  // Create a custom Feathers service
+  app.use('/tweet', {
+    create(data) {
+      return twitterClient.sendTweet(data.content);
+    }
+  });
+}
+```
+
+--
+
+## Writing plugins: Client
+
+```javascript
+export default function({ React, $ /* ... */ }) {
+  const app = this;
+
+  app.learn('myplugin', {
+    description: 'Do something cool',
+    tags: [ 'content' ],
+    form(classification) {},
+    onSubmit(form) {}
+  });
+
+  app.action('myplugin', function(el, classification) {
+    // Make API calls and show content here
+  });
+}
+```
+
+-- centered
+
+## The tech
+
+<a href="https://github.com/NaturalNode/natural">node-natural</a>&nbsp;&raquo;
+<a href="https://github.com/mysamai/natural-brain" target="_blank">natural-brain</a>&nbsp;&raquo;
+<a href="https://github.com/harthur-org/brain.js" target="_blank">brain.js</a>
+
+<a href="http://feathersjs.com" target="_blank"><img src="img/feathers-logo.png" alt="Feathers logo" style="width: 60%; margin: 1em 0;"></a>
+
+<a href="http://electron.atom.io/" target="_blank"><img src="img/electron-logo.png" style="width: 16%;" alt="Electron"></a>
+<a href="https://facebook.github.io/react/" target="_blank"><img style="width: 16%;" src="img/react-logo.png" alt="React"></a>
+<a href="http://stealjs.com" target="_blank"><img style="width: 16%;" src="img/steal-logo.png" alt="React"></a>
+
+-- marvin
+
+<div class="quote-container">
+  <h2>“Don’t pretend you want to talk to me, I know you hate me.” - <small>Marvin</small></h2>
+  <p><a href="http://wheelmaker42.deviantart.com/art/Marvin-the-Paranoid-Android-499132446" target="_blank">wheelmaker42.deviantart.com</a></p>
 </div>
+<img src="img/marvin.png" alt="Marvin The Paranoid Android" />
 
 --
 

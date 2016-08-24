@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <title>Meet Mysam</title>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,900,700,500' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link rel="stylesheet" href="theme/font-awesome.css">
   <style type="text/css">
     body {
@@ -406,27 +406,31 @@ html, body {
 }
 
 body {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 100;
   color: #333333;
-  background: url('theme/logo.png') #FFFFFF right bottom no-repeat;
   margin: 0;
 }
 
+a {
+  color: #e9485e;
+}
+
 h1 {
-  font-weight: 900;
+  font-weight: normal;
   margin: 20px 0 20px 0;
+  color: #d456b1;
 }
 
 h2 {
-  color: #AAAAAA;
-  font-weight: 500;
+  color: #d456b1;
+  font-weight: normal;
   font-size: 200%;
   margin: 20px 0;
 }
 
 h3 {
-  font-weight: 300;
+  font-weight: normal;
 }
 
 p {
@@ -441,8 +445,8 @@ ul {
   padding: 20px 0 20px 60px;
 }
 
-.progress-bar {
-  background: #DF6868;
+.centered {
+  text-align: center;
 }
 
 .logo {
@@ -472,6 +476,10 @@ ul {
     height: 80px;
     width: 80px;
   }
+}
+
+.slide {
+  background: url('theme/logo.png') transparent right bottom no-repeat;
 }
 
 .slide-content {
@@ -558,23 +566,72 @@ pre {
   border: none;
 }
 
-.code-large {
-  font-size: 120%;
-}
-
 .code-large pre {
+  font-size: 120%;
   padding-top: 2em;
-}
-
-.how {
-  background-image: url('img/dracones.jpg');
-  background-size: cover;
-  color: #FAFAFA;
-  padding-top: 5em;
 }
 
 .questions li {
   margin: 20px 0;
+}
+
+.progress {
+  top: 100%;
+  margin-top: -10px;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #e9485e;
+  background-image: -webkit-linear-gradient(left, #e9485e, #35344a);
+  background-image: -moz-linear-gradient(left, #e9485e, #35344a);
+  background-image: -o-linear-gradient(left, #e9485e, #35344a);
+  background-image: -ms-linear-gradient(left, #e9485e, #35344a);
+  background-image: linear-gradient(left, #e9485e, #35344a);
+  height: 10px;
+}
+
+.intro {
+  background: url('img/main-background.svg') transparent;
+  background-size: cover;
+}
+
+.intro h1 {
+  margin-top: 15%;
+  color: #F3F3F3;
+}
+
+.marvin.slide {
+  background: none;
+  background-color: #35344A;
+}
+
+.marvin .quote-container {
+  display: block;
+  width: 40%;
+  margin-top: 1.5em;
+  float: left;
+}
+
+.marvin .quote-container p {
+  font-size: 0.6em;
+  text-align: center;
+}
+
+.marvin h2 {
+  color: #F3F3F3;
+  font-style: italic;
+}
+
+.marvin h2 small {
+  font-style: normal;
+  color: #818181;
+}
+
+.marvin img {
+  display: block;
+  float: right;
+  height: 100%;
 }
 
   </style>
@@ -584,11 +641,11 @@ pre {
     <div class="progress-bar"></div>
   </div>
 
-  <div class="slide  how" id="slide-1">
-    <section class="slide-content"><h1 id="how-">How?</h1>
+  <div class="slide  intro" id="slide-1">
+    <section class="slide-content"><h1 id="meet-mysam">Meet mySam</h1>
 </section>
   </div>
-  <div class="slide hidden  code-large" id="slide-2">
+  <div class="slide hidden" id="slide-2">
     <section class="slide-content"><h2 id="html5-can-hear-you-">HTML5 can hear you!</h2>
 <pre><code class="lang-javascript"><span class="comment">// Only works in recent Webkit Browsers like</span>
 <span class="comment">// Mobile Android, Chrome, Chromium</span>
@@ -606,7 +663,8 @@ recognition.start();</code></pre>
 <p>Label each dataset.</p>
 <p>Then turn it into a fixed length list of numbers between 0 and 1.</p>
 </blockquote>
-<pre><code class="lang-javascript"><span class="keyword">var</span> net = <span class="keyword">new</span> brain.NeuralNetwork();
+<pre><code class="lang-javascript"><span class="keyword">const</span> brain = require(<span class="string">'brain.js'</span>);
+<span class="keyword">const</span> net = <span class="keyword">new</span> brain.NeuralNetwork();
 
 <span class="comment">// [ R, G, B ]</span>
 net.train([
@@ -622,7 +680,7 @@ net.train([
     <section class="slide-content"><h1 id="natural-language-processing-nlp-">Natural Language Processing (NLP)</h1>
 </section>
   </div>
-  <div class="slide hidden  code-large" id="slide-5">
+  <div class="slide hidden" id="slide-5">
     <section class="slide-content"><h2 id="-1-tokenize">#1 Tokenize</h2>
 <pre><code class="lang-javascript">tokenize(<span class="string">'What is the meaning of life'</span>)
 <span class="comment">// -&gt; [ 'What', 'is', 'the', 'meaning', 'of', 'life' ]</span>
@@ -630,7 +688,7 @@ tokenize(<span class="string">'What is the weather like today'</span>)
 <span class="comment">// -&gt; [ 'What', 'is', 'the', 'weather', 'like', 'today' ]</span></code></pre>
 </section>
   </div>
-  <div class="slide hidden  code-large" id="slide-6">
+  <div class="slide hidden" id="slide-6">
     <section class="slide-content"><h2 id="-2-stem">#2 Stem</h2>
 <pre><code class="lang-javascript">stem([ <span class="string">'What'</span>, <span class="string">'is'</span>, <span class="string">'the'</span>, <span class="string">'meaning'</span>, <span class="string">'of'</span>, <span class="string">'life'</span> ])
 <span class="comment">// -&gt; ['what', 'mean', 'life']</span>
@@ -641,7 +699,7 @@ join([<span class="string">'what'</span>, <span class="string">'mean'</span>, <s
 <span class="comment">// -&gt; [ 'what', 'mean', 'life', 'weather', 'todai' ]</span></code></pre>
 </section>
   </div>
-  <div class="slide hidden  code-large" id="slide-7">
+  <div class="slide hidden" id="slide-7">
     <section class="slide-content"><h2 id="-3-featurize">#3 Featurize</h2>
 <pre><code class="lang-javascript"><span class="comment">// [ 'what', 'mean', 'life', 'weather', 'todai' ]</span>
 features([ <span class="string">'what'</span>, <span class="string">'weather'</span>, <span class="string">'todai'</span> ])
@@ -650,7 +708,7 @@ features([ <span class="string">'what'</span>, <span class="string">'mean'</span
 <span class="comment">// -&gt; [ 1, 1, 1, 0, 0 ]</span></code></pre>
 </section>
   </div>
-  <div class="slide hidden  code-large" id="slide-8">
+  <div class="slide hidden" id="slide-8">
     <section class="slide-content"><h2 id="-4-train">#4 Train</h2>
 <pre><code class="lang-javascript"><span class="keyword">var</span> net = <span class="keyword">new</span> brain.NeuralNetwork();
 
@@ -663,7 +721,7 @@ net.train([
 ]);</code></pre>
 </section>
   </div>
-  <div class="slide hidden  code-large" id="slide-9">
+  <div class="slide hidden" id="slide-9">
     <section class="slide-content"><h2 id="-5-classify">#5 Classify</h2>
 <pre><code class="lang-javascript">tokenizeAndStem(<span class="string">'Can you tell me about the weather today please'</span>)
 <span class="comment">// -&gt; [ 'can', 'tell', 'weather', 'todai', 'pleas' ]</span>
@@ -675,19 +733,81 @@ net.run([ <span class="number">0</span>, <span class="number">0</span>, <span cl
 </section>
   </div>
   <div class="slide hidden" id="slide-10">
-    <section class="slide-content"><h2 id="and-more-">And more...</h2>
-<h3 style="text-align: center">Learn about it on Medium <a href="https://medium.com/@daffl/html5-nodejs-and-neural-networks-the-tech-behind-mysam-an-open-source-siri-6cc27992098b#.c1hi4mwzs">@daffl</a></h3>
+    <section class="slide-content"><h2 id="natural-brain">natural-brain</h2>
+<p>A <a href="https://github.com/NaturalNode/natural">node-natural</a> classifier using a <a href="https://github.com/harthur-org/brain.js">brain.js</a> neural network:</p>
+<pre><code class="lang-javascript"><span class="keyword">const</span> classifier = <span class="keyword">new</span> require(<span class="string">'natural-brain'</span>).BrainJSClassifier();
 
-<div style="text-align: center;">
-  <a href="http://feathersjs.com" target="_blank"><img alt="Feather" src="img/feathers-logo.png" style="max-width: 100%; margin: 40px 0;"></a>
-  <a href="http://donejs.com" target="blank"><img alt="DoneJS" src="img/donejs-logo-ie.png" style="max-width: 100%; margin: 40px 0;"></a>
-</div></section>
+classifier.addDocument(<span class="string">'my unit-tests failed.'</span>, <span class="string">'software'</span>);
+classifier.addDocument(<span class="string">'tried the program, but it was buggy.'</span>, <span class="string">'software'</span>);
+classifier.addDocument(<span class="string">'tomorrow we will do standup.'</span>, <span class="string">'meeting'</span>);
+classifier.addDocument(<span class="string">'can you play some new music?'</span>, <span class="string">'music'</span>);
+
+classifier.train();
+
+console.log(classifier.classify(<span class="string">'did the tests pass?'</span>)); <span class="comment">// -&gt; software</span>
+console.log(classifier.classify(<span class="string">'Lets meet tomorrow?'</span>)); <span class="comment">// -&gt; meeting</span>
+console.log(classifier.classify(<span class="string">'Can you play some stuff?'</span>)); <span class="comment">// -&gt; music</span></code></pre>
+</section>
   </div>
   <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h2 id="writing-plugins-server">Writing plugins: Server</h2>
+<pre><code class="lang-javascript">export <span class="keyword">default</span> <span class="keyword">function</span>() {
+  <span class="keyword">const</span> app = <span class="keyword">this</span>;
+
+  <span class="comment">// Get a database backed service at the /todos endpoint</span>
+  <span class="keyword">const</span> todoService = app.service(<span class="string">'/todos'</span>);
+
+  <span class="comment">// Create a custom Feathers service</span>
+  app.use(<span class="string">'/tweet'</span>, {
+    create(data) {
+      <span class="keyword">return</span> twitterClient.sendTweet(data.content);
+    }
+  });
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h2 id="writing-plugins-client">Writing plugins: Client</h2>
+<pre><code class="lang-javascript">export <span class="keyword">default</span> <span class="keyword">function</span>({ React, $ <span class="comment">/* ... */</span> }) {
+  <span class="keyword">const</span> app = <span class="keyword">this</span>;
+
+  app.learn(<span class="string">'myplugin'</span>, {
+    description: <span class="string">'Do something cool'</span>,
+    tags: [ <span class="string">'content'</span> ],
+    form(classification) {},
+    onSubmit(form) {}
+  });
+
+  app.action(<span class="string">'myplugin'</span>, <span class="keyword">function</span>(el, classification) {
+    <span class="comment">// Make API calls and show content here</span>
+  });
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden  centered" id="slide-13">
+    <section class="slide-content"><h2 id="the-tech">The tech</h2>
+<p><a href="https://github.com/NaturalNode/natural">node-natural</a>&nbsp;&raquo;
+<a href="https://github.com/mysamai/natural-brain" target="_blank">natural-brain</a>&nbsp;&raquo;
+<a href="https://github.com/harthur-org/brain.js" target="_blank">brain.js</a></p>
+<p><a href="http://feathersjs.com" target="_blank"><img src="img/feathers-logo.png" alt="Feathers logo" style="width: 60%; margin: 1em 0;"></a></p>
+<p><a href="http://electron.atom.io/" target="_blank"><img src="img/electron-logo.png" style="width: 16%;" alt="Electron"></a>
+<a href="https://facebook.github.io/react/" target="_blank"><img style="width: 16%;" src="img/react-logo.png" alt="React"></a>
+<a href="http://stealjs.com" target="_blank"><img style="width: 16%;" src="img/steal-logo.png" alt="React"></a></p>
+</section>
+  </div>
+  <div class="slide hidden  marvin" id="slide-14">
+    <section class="slide-content"><p><div class="quote-container">
+  <h2>“Don’t pretend you want to talk to me, I know you hate me.” - <small>Marvin</small></h2>
+  <p><a href="http://wheelmaker42.deviantart.com/art/Marvin-the-Paranoid-Android-499132446" target="_blank">wheelmaker42.deviantart.com</a></p>
+</div>
+<img src="img/marvin.png" alt="Marvin The Paranoid Android" /></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
     <section class="slide-content"><h1 id="why-">Why?</h1>
 </section>
   </div>
-  <div class="slide hidden  questions code-large" id="slide-12">
+  <div class="slide hidden  questions code-large" id="slide-16">
     <section class="slide-content"><h2 id="mysam-is-an-experiment">MySam is an experiment</h2>
 <ul>
 <li>Can we make Machine Learning more accessible?</li>
@@ -697,7 +817,7 @@ net.run([ <span class="number">0</span>, <span class="number">0</span>, <span cl
 </ul>
 </section>
   </div>
-  <div class="slide hidden  presenter" id="slide-13">
+  <div class="slide hidden  presenter" id="slide-17">
     <section class="slide-content"><p><img src="http://gravatar.com/avatar/a14850281f19396480bdba4aab2d52ef?s=200" alt="David Luecke"></p>
 <h2 id="david-luecke">David Luecke</h2>
 <ul>
