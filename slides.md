@@ -228,3 +228,16 @@ export default function({ React, $ /* ... */ }) {
 * [<i class="fa fa-github"></i> mysamio](https://github.com/mysamio)
 
 [daffl.github.io/meet-mysam](http://daffl.github.io/meet-mysam)
+
+--
+
+## Some links
+
+* [mysamio on GitHub](https://github.com/mysamio)
+* [HTML5, NodeJS and Neural Networks: The tech behind MySam, an open source Siri](https://medium.com/@daffl/html5-nodejs-and-neural-networks-the-tech-behind-mysam-an-open-source-siri-6cc27992098b#.xbzk91x3o)
+* [node-natural](https://github.com/NaturalNode/natural)
+* [natural-brain](https://github.com/mysamai/natural-brain)
+* [brain.js](https://github.com/harthur-org/brain.js)
+* [OpenAI](https://openai.com/)
+* [Jasper](https://jasperproject.github.io/)
+* [Sirius](http://sirius.clarity-lab.org/)
